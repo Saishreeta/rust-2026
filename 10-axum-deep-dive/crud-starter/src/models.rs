@@ -1,5 +1,3 @@
-// src/models.rs — request inputs, internal storage, response outputs.
-
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Clone)]
