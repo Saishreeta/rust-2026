@@ -1,12 +1,3 @@
-// src/error.rs — the AppError type.
-//
-// Step 4 of the hands-on.
-//
-// One error type for the whole service. Every handler returns
-// `Result<T, AppError>` and `?` just works. The IntoResponse impl
-// below does the HTTP status mapping AND the JSON shape — handlers
-// never assemble an error response manually.
-
 use axum::{
     http::StatusCode,
     response::{IntoResponse, Response},
@@ -18,8 +9,6 @@ use serde_json::json;
 pub enum AppError {
     NotFound(String),
     BadRequest(String),
-    // Future-proof: when you add a database, this is the variant
-    // you'll use and `Internal` is the catch-all.
     #[allow(dead_code)]
     Internal(String),
 }
