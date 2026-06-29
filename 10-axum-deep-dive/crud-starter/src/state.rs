@@ -1,11 +1,3 @@
-// src/state.rs — the in-memory user store.
-//
-// The `db` and `next_id` are wrapped in `Arc<RwLock<_>>` so they can
-// be cloned cheaply into every handler via `State<AppState>`.
-//
-// Real code would back this with sqlx + Postgres. The HTTP layer
-// wouldn't change.
-
 use std::{
     collections::HashMap,
     sync::{Arc, RwLock},
